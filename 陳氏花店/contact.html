@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳氏花市</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <!-- 頁首區 -->
+    <!-- id&class的名稱是自己命名的 -->
+    <header id="topbar">
+        <!-- logo區 -->
+        <!-- alt沒有寫內容也要留，主要是seo搜尋引擎 -->
+        <div class="logo">
+            <img src="./images/logo_b.svg" alt="logo">
+        </div>
+        <!-- 導覽列 -->
+        <nav class="navigation">
+            <!-- icon選單 --> <!-- ul>li*3>a -->
+            <ul class="icon">
+                <li><a class="icon-fb" href="#"></a></li>
+                <li><a class="icon-ig" href="#"></a></li>
+                <li><a class="icon-line" href="#"></a></li>
+            </ul>
+            <!-- 主選單 --> <!-- ul>li*6>a -->
+            <ul class="menu">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 主要內容區 -->
+    <main>
+        <section id="contact">
+            <!-- 區塊標題 -->
+            <header class="title">
+                <h2>CONTACT</h2>
+                <h3>聯絡我們</h3>
+            </header>
+
+            <!-- 聯絡區塊 -->
+            <div class="content">
+                <!-- 資訊 -->
+                <div class="address">
+                    <!-- 品牌名稱 -->
+                    <h1>陳氏花市</h1>
+
+                    <!-- 聯絡方式 -->
+                    <address>
+                        <p>連絡電話 / 02-290527488</p>
+                        <p>營業時間 / 10:00~21:00</p>
+                        <p>地址 / 台北市大安區新生南路二段43號</p>
+                    </address>
+
+                    <!-- google map -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.3454195374613!2d121.52837723487136!3d25.044563869037557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96523e0246d%3A0xf1c9276707165c71!2z6I-v5bGxMTkxNOaWh-WMluWJteaEj-eUoualreWckuWNgA!5e0!3m2!1szh-TW!2stw!4v1753778082558!5m2!1szh-TW!2stw"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+
+                <!-- 表單 -->
+                <form name="contactform" id="contactform" action="" method="post" accept-charset="UTF-8">
+
+                    <label for="usernamme">*姓名：</label>
+                    <input type="text" name="usernamme" id="usernamme" title="姓名欄位" placeholder="請輸入姓名" required
+                        autofocus>
+
+                    <label for="tel">連絡電話：</label>
+                    <input type="tel" name="tel" id="tel" maxlength="10" title="請輸入連絡電話" placeholder="例如:982469552">
+
+                    <label for="email">*Email：</label>
+                    <input type="email" name="email" id="email" required multiple title="Email欄位"
+                        placeholder="請輸入Email">
+
+                    <label for="">留言：</label>
+                    <textarea name="message" id="message" rows="6" placeholder="請輸入您的意見"></textarea>
+
+                    <button class="btn-animat" type="submit">
+                        <span>送出</span>
+                    </button>
+
+                    <form>
+
+
+            </div>
+            <!-- 裝飾花朵 -->
+            <figure class="flower1"><img src="./images/flower_r.png" alt="裝飾花朵"></figure>
+            <figure class="flower2"><img src="./images/flower_w.png" alt="裝飾花朵"></figure>
+
+        </section>
+    </main>
+    <!-- 頁尾區 -->
+    <footer>
+        <h2>陳氏花市 <span>Chen Flower</span></h2>
+        <nav>
+            <ul class="sitemap">
+                <li><a href="./index.html">HOME</a></li>
+                <li>
+                    <a href="#">NEWS</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">優惠活動</a></li>
+                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="#">商店公告</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">SERVICE</a>
+                    <!-- 子選單 -->
+                    <ul>
+                        <li><a href="#">服務項目1</a></li>
+                        <li><a href="#">服務項目2</a></li>
+                        <li><a href="#">服務項目3</a></li>
+                        <li><a href="#">服務項目4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <small>Copyright &copy; 陳氏花市 Chen Flower </small>
+    </footer>
+</body>
+
+</html>

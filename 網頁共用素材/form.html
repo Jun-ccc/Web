@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單</title>
+    <style>
+        form>* {
+            display: block;
+        }
+
+        label,
+        fieldset {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 搜尋表單 -->
+    <h2>搜尋商品</h2>
+    <for name="searchform" id="searchform" action="" method="post" accept-charset="UTF-8">
+        <label for="search">搜尋:</label>
+        <input type="search" name="search" id="search" size="15">
+        <input type="submit" value="搜尋">
+        </form>
+
+        <!-- 會員資料修改 -->
+        <h2>會員資料修改</h2>
+        <small></small>
+        <for name="memberform" id="memberform" action="" method="post" accept-charset="UTF-8">
+            <label for="usernamme">*姓名：</label>
+            <!-- autofocus 欄位必須在 first view 顯示才能設定 -->
+            <input type="text" name="usernamme" id="usernamme" title="姓名欄位" placeholder="請輸入姓名" required autofocus>
+
+            <label for="userid">*身分證字號：</label>
+            <input type="text" name="userid" id="userid" title="身份證字號欄位" required readonly value="A123456789">
+            <!-- 只讀 -->
+
+            <label for="account">*帳號：</label>
+            <input type="text" name="account" id="account" title="身份證字號欄位" required disabled value="useraccount">
+            <!-- 禁用 -->
+
+            <!-- id&for 不可重複名稱 -->
+            <label for="password-1">*密碼：</label>
+            <input type="password" name="password" id="password-1" title="密碼欄位" placeholder="請輸入8位以上英文家數字">
+
+            <label for="password-2">*確認密碼：</label>
+            <input type="password" name="password" id="password-2" title="確認密碼欄位" placeholder="請輸入與上方相同密碼">
+
+            <label for="email">*Email：</label>
+            <!-- multiple 可輸入多個值用「,」隔開 -->
+            <input type="email" name="email" id="email" required multiple title="Email欄位" placeholder="請輸入Email">
+
+            <label for="tel">連絡電話：</label>
+            <input type="tel" name="tel" id="tel" maxlength="10" title="請輸入連絡電話" placeholder="例如:982469552">
+
+            <label for="website">官方網站：</label>
+            <input type="url" name="website" id="website" placeholder="請輸入網址">
+
+            <label for="file">上傳檔案：</label>
+            <small>僅限.jpg,.png,.gif,.pdf檔案類型</small>
+            <input type="file" name="file" id="file" multiple>
+
+            <label for="color">選擇顏色：</label>
+            <input type="color" name="color" id="color">
+
+            <label for="number">購買數量：</label>
+            <input type="number" name="number" id="number" style="width: 50px;">
+            <input type="range" name="range" id="range"> <!-- 用滑塊控制輸入數字 -->
+
+            <label for="birthday">生日：</label>
+            <input type="date" name="birthday" id="birthday">
+
+            <!-- 下拉選單 <select> -->
+            <label for="sex">性別：</label>
+            <select name="sex" id="sex">
+                <option value="">請選擇</option>
+                <option value="生理男">生理男</option>
+                <option value="生理女">生理女</option>
+                <option value="不透漏">不透漏</option>
+            </select>
+
+            <label for="">其他類別：</label>
+            <select name="other" id="other">
+                <option value="">請選擇</option>
+                <!-- 分類一 -->
+                <optgroup label="分類一">
+                    <option value="選項1">選項1</option>
+                    <option value="選項2">選項2</option>
+                    <option value="選項3">選項3</option>
+                </optgroup>
+                <!-- 分類二 -->
+                <optgroup label="分類二">
+                    <option value="選項1">選項1</option>
+                    <option value="選項2">選項2</option>
+                    <option value="選項3">選項3</option>
+                </optgroup>
+            </select>
+
+            <!-- 單選按鈕 -->
+            <!-- 同組單選按鈕name要設定相同名稱，用name名稱來判斷是否為同組選項 -->
+            <fieldset disabled> <!-- 可禁用 -->
+                <legend>會員類型：</legend>
+                <input type="radio" name="member" id="member1" value="金卡會員" checked>
+                <label for="member1">金卡會員</label>
+                <input type="radio" name="member" id="member2" value="銀卡會員">
+                <label for="member2">銀卡會員</label>
+                <input type="radio" name="member" id="member3" value="銅卡會員">
+                <label for="member3">銅卡會員</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>訂閱方案：</legend>
+                <input type="radio" name="category" id="category1" value="類型1" checked> <!-- 可預選 -->
+                <label for="category1">1年</label>
+                <input type="radio" name="category" id="category2" value="類型2">
+                <label for="category2">30天</label>
+                <input type="radio" name="category" id="category3" value="類型3">
+                <label for="category3">15天</label>
+                <input type="radio" name="category" id="category4" value="類型4">
+                <label for="category4">7天</label>
+            </fieldset>
+
+            <!-- 複選框 -->
+            <fieldset>
+                <legend>訂閱電子報：</legend>
+                <input type="checkbox" name="order" id="order-1" value="國際">
+                <label for="order-1">國際</label>
+                <input type="checkbox" name="order" id="order-2" value="社會">
+                <label for="order-2">社會</label>
+                <input type="checkbox" name="order" id="order-3" value="財經">
+                <label for="order-3">財經</label>
+                <input type="checkbox" name="order" id="order-4" value="科技">
+                <label for="order-4">科技</label>
+                <input type="checkbox" name="order" id="order-5" value="娛樂">
+                <label for="order-5">娛樂</label>
+            </fieldset>
+
+            <!-- 多行文字欄位 -->
+            <label for="">留言</label>
+            <textarea name="message" id="message" rows="5" style="width: 350px;"></textarea>
+
+            <!-- 表單按鈕一定要放在<form>中 -->
+            <div>
+                <input type="reset" value="重填">
+                <input type="submit" value="送出">
+            </div>
+
+
+            </form>
+</body>
+
+</html>

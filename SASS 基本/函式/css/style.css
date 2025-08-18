@@ -1,0 +1,31 @@
+@charset "UTF-8";
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+}
+
+/* 重置連接 */
+a {
+  display: block;
+  /* inline不支援尺寸設定，但a常拿來共用 */
+  color: #666;
+  text-decoration: none;
+  /* 取消預設底線 */
+  /* 設定在元素本身，不要設定在hover上，
+  設定在hover上及未停留滿動畫時間時，滑鼠離開沒有動畫 */
+  transition: 0.4s;
+}
+
+#contact, #news, #list-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 玻璃擬態 */
