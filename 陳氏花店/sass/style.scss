@@ -19,10 +19,33 @@
     }
 
     h2 {
+        position: relative;
         font-family: $family-display;
         font-size: $f-s-xxxl;
         @include border-b;
         font-weight: $f-w-b ;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -12px;
+            width: 15px;
+            height: 15px;
+            border-radius: $radius-ex;
+            background-color: $lesser-4;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            right: -15px;
+            width: 10px;
+            height: 10px;
+            border-radius: $radius-ex;
+            background-color: $lesser-4;
+        }
     }
 
     h3 {
@@ -54,6 +77,16 @@
     }
 }
 
+.more {
+    width: 100px; // 行高設定和高度一樣，文字可垂直置中
+    line-height: 50px; // 單行文字垂直置中
+    text-align: center;
+    background-color: $lesser-4;
+    margin-top: $space-lg;
+    color: $Light;
+    border-radius: $radius-ex;
+}
+
 /* 首頁區 */
 #topbar {
     position: fixed;
@@ -83,6 +116,83 @@
                 color: $Black;
                 @include border-b($width: 2px, $color: $Black);
             }
+        }
+    }
+}
+
+/* 主要內容區 */
+#index {
+    section {
+        @extend %flex-center;
+        flex-direction: column;
+        height: 100vh;
+    }
+}
+
+.list-box {
+    display: flex;
+    gap: $space-xl;
+    width: $w-80;
+    max-width: 1100px; // 集中注意力在中間
+
+    .item {
+        flex: 1;
+        @include bordered;
+        border-radius: $radius-md;
+        overflow: hidden; // 超過圓角被隱藏
+    }
+}
+
+
+/* 最新消息 */
+#news {
+    background-color: $bg-1;
+
+    figure {
+        height: 25vh;
+
+        img {
+            @extend %img-cover;
+        }
+    }
+
+    .text-box {
+        padding: $space-md;
+
+        h2 {
+            font-size: $f-s-lg;
+            font-weight: $f-w-m;
+            margin-bottom: $space-sm;
+        }
+
+        p {
+            @extend %multiple-lines;
+            -webkit-line-clamp: 4;
+        }
+    }
+}
+
+// 服務項目
+#service {
+    .item {
+        height: 50vh;
+        background-size: cover; // 自動縮放，並剪裁掉右下圖片範圍
+        background-position: center; // 背景置中要另外寫
+
+        &:nth-child(1) {
+            background-image: url(../images/pt_svc1.jpg);
+        }
+
+        &:nth-child(2) {
+            background-image: url(../images/pt_svc2.jpg);
+        }
+
+        &:nth-child(3) {
+            background-image: url(../images/pt_svc3.jpg);
+        }
+
+        &:nth-child(4) {
+            background-image: url(../images/pt_svc4.jpg);
         }
     }
 }
@@ -207,7 +317,7 @@ footer {
         display: flex;
 
         @media ($mediaMd) {
-            margin-top: $space-x;
+            margin-top: $space-ex;
         }
 
         @media ($mediaSm) {
