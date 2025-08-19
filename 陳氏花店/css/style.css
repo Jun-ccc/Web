@@ -161,7 +161,7 @@ a {
   transition: 0.4s;
 }
 
-#index section, #contact, #contact .content #contactform .btn-animat {
+#index section, #video div, #contact, #contact .content #contactform .btn-animat {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,9 +177,10 @@ a {
   justify-content: flex-end;
 }
 
-#news figure img {
+#news article a figure img, #about video {
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
 #contact .content #contactform .btn-animat {
@@ -216,11 +217,23 @@ a {
   font-weight: 400;
 }
 
-#news .text-box p {
+#news article a .text-box p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+}
+
+#service .list-box .item a p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#news article a .text-box h2, #service .list-box .item a h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 @keyframes myRotate {
@@ -374,6 +387,12 @@ a {
   flex-direction: column;
   height: 100vh;
 }
+@media (max-width:820px) {
+  #index section#video {
+    height: auto;
+    padding-bottom: 110px;
+  }
+}
 
 .list-box {
   display: flex;
@@ -392,37 +411,118 @@ a {
 #news {
   background-color: #f2edf0;
 }
-#news figure {
+@media (max-width:820px) {
+  #news article:last-child {
+    display: none;
+  }
+}
+@media (max-width:640px) {
+  #news article:nth-child(n+2) {
+    display: none;
+  }
+}
+#news article a:hover .text-box {
+  background-color: #f2f7fa;
+}
+#news article a:hover figure {
+  filter: brightness(50%);
+}
+#news article a figure {
   height: 25vh;
+  transition: 0.4s;
 }
-#news .text-box {
+#news article a .text-box {
   padding: 20px;
+  transition: 0.4s;
 }
-#news .text-box h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-#news .text-box p {
+#news article a .text-box p {
+  text-align: justify;
   -webkit-line-clamp: 4;
 }
 
-#service .item {
+#service {
+  background-color: #e6ece5;
+}
+@media (max-width:820px) {
+  #service .list-box {
+    flex-direction: column;
+    height: 40vh;
+  }
+}
+#service .list-box .item {
+  display: flex;
+  align-items: flex-end;
   height: 50vh;
   background-size: cover;
   background-position: center;
 }
-#service .item:nth-child(1) {
+@media (max-width:820px) {
+  #service .list-box .item:nth-child(n+3) {
+    display: none;
+  }
+}
+@media (max-width:640px) {
+  #service .list-box .item:nth-child(n+2) {
+    display: none;
+  }
+}
+#service .list-box .item:nth-child(1) {
   background-image: url(../images/pt_svc1.jpg);
 }
-#service .item:nth-child(2) {
+#service .list-box .item:nth-child(2) {
   background-image: url(../images/pt_svc2.jpg);
 }
-#service .item:nth-child(3) {
+#service .list-box .item:nth-child(3) {
   background-image: url(../images/pt_svc3.jpg);
 }
-#service .item:nth-child(4) {
+#service .list-box .item:nth-child(4) {
   background-image: url(../images/pt_svc4.jpg);
+}
+#service .list-box .item a {
+  width: 100%;
+  padding: 20px;
+  color: #f2f7fa;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#service .list-box .item a:hover {
+  color: #0a0a0a;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#video {
+  background-image: url(../images/bg_contact.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+#video div {
+  height: 50vh;
+}
+@media (max-width:820px) {
+  #video div {
+    width: 80%;
+    height: auto;
+  }
+}
+#video div video {
+  height: 100%;
+}
+@media (max-width:820px) {
+  #video div video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* 關於我們 */
+#about {
+  position: relative;
+  background-color: #f2edf0;
+}
+#about video {
+  position: absolute;
+  opacity: 0.7;
+  mix-blend-mode: multiply;
 }
 
 /* 聯絡我們 */

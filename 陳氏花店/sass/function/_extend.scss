@@ -20,7 +20,7 @@
 %img-cover {
     object-fit: cover;
     height: 100%;
-    // width:100%; 在reset設定過
+    width: 100%; // 在reset設定過
 }
 
 %btn-animat {
@@ -68,4 +68,16 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+}
+
+%single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%list-title {
+    font-size: $f-s-lg;
+    font-weight: $f-w-m;
+    margin-bottom: $space-sm;
 }
