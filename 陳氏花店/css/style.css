@@ -161,7 +161,7 @@ a {
   transition: 0.4s;
 }
 
-#index section, #video div, #contact, #contact .content #contactform .btn-animat {
+#index section, #video div, #about div, #contact, #contact .content #contactform .btn-animat {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -517,10 +517,72 @@ a {
 /* 關於我們 */
 #about {
   position: relative;
-  background-color: #f2edf0;
+  background-color: #f3e4e4;
+}
+#about div {
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  flex-direction: column;
+}
+@media (max-width:820px) {
+  #about div {
+    width: 90%;
+  }
+}
+#about div p {
+  overflow: scroll;
+  width: 90%;
+  margin-bottom: 50px;
+  padding-right: 10px;
+  /* 主要滾動條 (包含上下按鈕範圍) */
+  /* 上下左右按鈕 */
+  /* 滑動條 */
+  /* 滾動軌道 (和主要滾動條一樣，兩者擇一即可) (不包含上下按鈕範圍) */
+  /* 未被手柄遮住的軌道 */
+  /* &::-webkit-scrollbar-track-piece {
+      background-color: $lesser-2;
+      border-radius: $radius-ex;
+  } */
+  /* 右側與下方滑動條中間的方塊 */
+}
+#about div p::-webkit-scrollbar {
+  background-color: #f3e4e4;
+  border-radius: 99px;
+  width: 12px;
+  height: 12px;
+}
+#about div p::-webkit-scrollbar-button {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#about div p::-webkit-scrollbar-button:vertical:single-button:start {
+  background-image: url(../images/arrow-up.svg);
+}
+#about div p::-webkit-scrollbar-button:vertical:single-button:end {
+  background-image: url(../images/arrow-down.svg);
+}
+#about div p::-webkit-scrollbar-button:horizontal:single-button:start {
+  background-image: url(../images/arrow-left.svg);
+}
+#about div p::-webkit-scrollbar-button:horizontal:single-button:end {
+  background-image: url(../images/arrow-right.svg);
+}
+#about div p::-webkit-scrollbar-thumb {
+  background-color: #8f6d6b;
+  border-radius: 99px;
+}
+#about div p::-webkit-scrollbar-track {
+  background-color: #efdbdb;
+  border-radius: 99px;
+}
+#about div p::-webkit-scrollbar-corner {
+  background-color: #8f6d6b;
 }
 #about video {
-  position: absolute;
   opacity: 0.7;
   mix-blend-mode: multiply;
 }
@@ -572,6 +634,12 @@ a {
 }
 #contact .content #contactform label {
   margin: 10px 0 5px;
+}
+#contact .content #contactform textarea {
+  border-bottom-right-radius: 0;
+}
+#contact .content #contactform textarea::-webkit-resizer {
+  background-image: url(../images/arrow-45.svg);
 }
 #contact figure {
   position: absolute;
