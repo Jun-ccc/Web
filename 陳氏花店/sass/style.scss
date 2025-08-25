@@ -2,7 +2,7 @@
 @use "variables" as *;
 @use "function" as *;
 @use "./keyframe.scss";
-@import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&family=Kaushan+Script&display=swap");
 
 @font-face {
     font-family: Garf;
@@ -553,6 +553,26 @@ footer {
         @media ($mediaSm) {
             align-self: flex-start;
             margin-top: $space-xl;
+        }
+    }
+
+    #gotop {
+        display: none;
+        width: 50px;
+        height: 50px;
+        background-color: $lesser-3;
+        border-radius: $radius-ex;
+
+        // button 預設有padding與border
+        border: none;
+        position: fixed;
+        bottom: $space-xxl;
+        right: $space-xl;
+        cursor: pointer;
+        z-index: $z-ex;
+
+        &:hover {
+            background-color: $lesser-2;
         }
     }
 

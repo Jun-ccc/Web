@@ -8,6 +8,9 @@
     <title>陳氏花市</title>
     <!-- favicon 必須是正方形，16*16(一般會做48*48) -->
     <link rel="icon" href="./favicon.ico">
+    <!-- Carouael CSS 別人的套件，常會獨立檔案連結 -->
+    <link rel="stylesheet" href="./css/carousel.min.css">
+    <!-- My CSS一定要在最下面，權重最重 -->
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
@@ -29,16 +32,90 @@
             <!-- 主選單 --> <!-- ul>li*6>a -->
             <ul class="menu">
                 <li><a href="./index.html">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">VIDEO</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#service">SERVICE</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#video">VIDEO</a></li>
                 <li><a href="./contact.html">CONTACT</a></li>
             </ul>
         </nav>
     </header>
     <main id="index">
-        <section id="banner"></section>
+        <!-- 換圖輪播 -->
+        <section id="section-1">
+            <!-- 隱藏的單選按鈕(jq換圖區) -->
+            <div class="content-slider">
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner5" class="sec-1-input" name="banner">
+                <!-- 主要的輪播區 -->
+                <div class="slider">
+                    <!-- 單張banner -->
+                    <div id="top-banner-1" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Creative Template</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 單張banner -->
+                    <div id="top-banner-2" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>What We Do</h2>
+                            <h1>Great<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 單張banner -->
+                    <div id="top-banner-3" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 單張banner -->
+                    <div id="top-banner-4" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 單張banner -->
+                    <div id="top-banner-5" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#">Learn More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 控制鈕 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner2"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner3"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner4"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner5"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
         <section id="news">
             <header class="title">
                 <h2>NEWS</h2>
@@ -272,7 +349,36 @@
             </ul>
         </nav>
         <small>Copyright &copy; 陳氏花市 Chen Flower </small>
+
+        <button id="gotop" title="Back to top">
+            <svg version="1.1" id="arrow_up" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <style type="text/css">
+                    .st0 {
+                        fill: none;
+                        stroke: #FFFFFF;
+                        stroke-width: 8;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                    }
+                </style>
+                <path class="st0" d="M19.73,63.42l26.98-26.98c2.22-2.22,5.81-2.22,8.02,0l26.98,26.98" />
+            </svg>
+        </button>
     </footer>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Carousel JS 別人的套件，常會獨立檔案連結 -->
+    <script src="./js//carousel.js"></script>
+
+    <!-- My jquery -->
+    <script src="./js/script.js"></script>
+
 </body>
 
 </html>

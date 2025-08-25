@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 編碼一定要在第一行 */
 @import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&family=Kaushan+Script&display=swap");
 /* google font 一定要在第二行 */
 /* CSS變數 */
 :root {
@@ -715,4 +715,20 @@ footer small {
     align-self: flex-start;
     margin-top: 30px;
   }
+}
+footer #gotop {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: #cdaaab;
+  border-radius: 99px;
+  border: none;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 99999;
+}
+footer #gotop:hover {
+  background-color: #efdbdb;
 }
