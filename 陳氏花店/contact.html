@@ -16,26 +16,39 @@
         <!-- logo區 -->
         <!-- alt沒有寫內容也要留，主要是seo搜尋引擎 -->
         <div class="logo">
-            <img src="./images/logo_b.svg" alt="logo">
+            <a href="./index.html">
+                <img src="./images/logo_b.svg" alt="logo">
+            </a>
         </div>
-        <!-- 導覽列 -->
-        <nav class="navigation">
-            <!-- icon選單 --> <!-- ul>li*3>a -->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-            </ul>
-            <!-- 主選單 --> <!-- ul>li*6>a -->
-            <ul class="menu">
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="./index.html#news">NEWS</a></li>
-                <li><a href="./index.html#service">SERVICE</a></li>
-                <li><a href="./index.html#about">ABOUT</a></li>
-                <li><a href="./index.html#video">VIDEO</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+
+        <div class="navbar">
+            <!-- 漢堡按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- 導覽列 -->
+            <nav class="navigation">
+                <!-- icon選單 --> <!-- ul>li*3>a -->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                </ul>
+                <!-- 主選單 --> <!-- ul>li*6>a -->
+                <ul class="menu">
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
     <!-- 主要內容區 -->
     <main>
@@ -131,6 +144,14 @@
         </nav>
         <small>Copyright &copy; 陳氏花市 Chen Flower </small>
     </footer>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+
+    <!-- My jquery -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

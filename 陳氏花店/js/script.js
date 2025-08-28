@@ -1,5 +1,11 @@
 $(function () {
 
+    // 漢堡按鈕
+    $(".hamburger").click(function () {
+        $(this).toggleClass("is-active"); // 切換 三 & X
+        $(".navigation").toggleClass("show"); // 切換 顯示 & 隱藏
+    });
+
     // 捲動指定位置
     $(".menu a").click(function () {
         var btn = $(this).attr("href");
@@ -20,4 +26,9 @@ $(function () {
             $("#gotop").stop().fadeOut("fast");
         }
     });
+});
+
+// smoove公用預設值
+$('.smoove').smoove({
+    offset: 250
 });

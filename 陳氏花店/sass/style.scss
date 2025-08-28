@@ -97,27 +97,97 @@
     @extend %flex-between;
     padding: $space-xs $space-xs;
 
-    ul {
-        @extend %flex-end;
-    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
-    .menu {
-        padding: $space-x-xs;
-        border-radius: $radius-ex;
-        @include glassmorphism;
+        // 漢堡按鈕
+        .hamburger {
+            background-color: transparent;
+            border: none;
+            margin-bottom: $space-xs;
 
-        a {
-            font-family: $family-en;
-            font-weight: $f-w-b;
-            margin: $space-xs;
-            @include border-b($width: 2px, $color: transparent);
+            @media ($mediaXl) {
+                display: none;
+            }
 
-            &:hover {
-                color: $Black;
-                @include border-b($width: 2px, $color: $Black);
+            .bar {
+                display: block;
+                width: 24px;
+                height: 3px;
+                background-color: $Charcoal;
+                margin: $space-xxs auto;
+            }
+
+            &.is-active {
+                .bar {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(5px, 6px);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-45deg)translate(5px, -6px);
+                    }
+                }
+
+
             }
         }
+
+        .navigation {
+            @media($mediaLg) {
+                @include glassmorphism;
+                border-radius: $radius-md;
+                flex-direction: column;
+                padding: $space-xs;
+
+                display: none; // 一開始先隱藏
+                @include amt($name: hide);
+
+                &.show {
+                    display: flex; // 點擊後顯示
+                    @include amt($name: show);
+                }
+            }
+
+            ul {
+                @extend %flex-end;
+            }
+
+            .menu {
+                padding: $space-x-xs;
+                border-radius: $radius-ex;
+
+                @media($mediaXl) {
+                    @include glassmorphism;
+                }
+
+                @media($mediaLg) {
+                    flex-direction: column;
+                    order: -1;
+                }
+
+                a {
+                    font-family: $family-en;
+                    font-weight: $f-w-b;
+                    margin: $space-xs;
+                    @include border-b($width: 2px, $color: transparent);
+
+                    &:hover {
+                        color: $Black;
+                        @include border-b($width: 2px, $color: $Black);
+                    }
+                }
+            }
+
+        }
     }
+
 }
 
 /* 主要內容區 */
